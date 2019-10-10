@@ -58,18 +58,22 @@ These instructions will get you a copy of the project up and running on your loc
     ```
 
 5. Log in to [SonarCloud](https://sonarcloud.io). You can log in with your Github account.
-
+   
 6. Click analyze new project.
-![add project](https://raw.githubusercontent.com/crappylime/pure-heroes/master/docs/images/add-project.png)
 
-6. Choose set up manually and fill in the form.
-![set up manually](https://raw.githubusercontent.com/crappylime/pure-heroes/master/docs/images/setup-manually.png)
+    ![add project](https://raw.githubusercontent.com/crappylime/pure-heroes/master/docs/images/add-project.png)
 
-8. Choose analyze your project manually.
-![analyze manually](https://raw.githubusercontent.com/crappylime/pure-heroes/master/docs/images/analyze-manually.png)
+7. Click set up manually and fill in the form.
 
-9. Choose other, Linux and copy values of `Dsonar.login`, `Dsonar.projectKey` and `Dsonar.organization`.
-![sonar credentials](https://raw.githubusercontent.com/crappylime/pure-heroes/master/docs/images/sonar-credentials.png)
+    ![set up manually](https://raw.githubusercontent.com/crappylime/pure-heroes/master/docs/images/setup-manually.png)
+
+8. Click analyze your project manually.
+
+    ![analyze manually](https://raw.githubusercontent.com/crappylime/pure-heroes/master/docs/images/analyze-manually.png)
+
+9. Click other, Linux and copy values of `Dsonar.login`, `Dsonar.projectKey` and `Dsonar.organization`.
+
+    ![sonar credentials](https://raw.githubusercontent.com/crappylime/pure-heroes/master/docs/images/sonar-credentials.png)
 
 10. Paste copied values to `sonar-project.properties`:
 
