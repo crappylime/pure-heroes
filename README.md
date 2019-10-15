@@ -98,20 +98,21 @@ These instructions will get you a copy of the project up and running on your loc
 the standard linter for `TypeScript`. The default linting tool for `Angular`.  
 
 1. Why?
+
     Having lint rules in place means that you will get a nice error when you are doing
     something that you should not be. This will enforce consistency in your application and
     readability. Some lint rules even come with fixes to resolve the lint error. If you want to configure
     your own custom lint rule, you can do that too.
 
-2. Rules
+2. [Configuration](https://palantir.github.io/tslint/usage/configuration/)
     
     The default configuration for `Angular` is specified in the project's `tslint.json` file.
 
-    `tslint.json` extends `"tslint:recommended"` and these rules you can find [here](https://github.com/palantir/tslint/blob/master/src/configs/recommended.ts).
+    `tslint.json` extends `"tslint:recommended"` with rules recommended for TypeScript projects, you can find them [here](https://github.com/palantir/tslint/blob/master/src/configs/recommended.ts).
 
-    All rules are described [here](https://palantir.github.io/tslint/rules/) with given **schema** and example.
+    All these rules are described [here](https://palantir.github.io/tslint/rules/) with given **schema** and example.
 
-    Rules are split into 5 categories:
+    TS rules are split into 5 categories:
     - TS-specific,
     - Functionality,
     - Maintainability,
@@ -120,15 +121,23 @@ the standard linter for `TypeScript`. The default linting tool for `Angular`.
 
     Each rule can have one of the flags: TS Only, Has Fixer, Requires type info.
 
-3. Aren't the default rules enough?
+    There is [playground](https://palantir.github.io/tslint-playground/) available to test each of them.
 
-    It depends on your team workflow. However if you tend to put the same comment over and over again during the code review, it probably can be automated.  
+    `Angular` `tslint.json` file also includes the [Codelyzer](https://github.com/mgechev/codelyzer) with rules specific for `Angular`:
+    ```
+      "rulesDirectory": [
+        "codelyzer"
+    ]
+    ```
+    If you wanted to override some rule and you didn't find the description on `tslint` website, that's a second place you should check.
 
-    If you follow the [Angular Style Guide](https://angular.io/guide/styleguide), there are some npm packages available that implemented these rules:
-    - [tslint-angular](https://www.npmjs.com/package/tslint-angular) recommended by codelyzer,
-    - [angular-tslint-rules](https://www.npmjs.com/package/angular-tslint-rules) - when I added this to one project it showed over 2 thousand errors and I'd say that they poorly handle tests, but you can exclude them from linting.
+3. [Custom rule sets from the community](https://github.com/palantir/tslint/blob/master/README.md#custom-rules--plugins)
 
-4. Excluding tests from linting in the `angular.json`:
+    If you follow the [Angular Style Guide](https://angular.io/guide/styleguide), there are some npm packages available that implement these rules:
+    - [tslint-angular](https://www.npmjs.com/package/tslint-angular),
+    - [angular-tslint-rules](https://www.npmjs.com/package/angular-tslint-rules)
+
+4. You can exclude files from linting in the `angular.json`, for example tests:
 
     ```diff
         "lint": {
@@ -147,17 +156,9 @@ the standard linter for `TypeScript`. The default linting tool for `Angular`.
           }
     ```
 
-5. [Codelyzer](https://github.com/mgechev/codelyzer)
+    You also can [exclude some files](https://palantir.github.io/tslint/usage/configuration/) in the `tslint.json` with `linterOptions?: { exclude?: string[] }`.
 
-    another tool for static code analysis, included at the end of the `tslint.json`:
-    ```
-      "rulesDirectory": [
-        "codelyzer"
-    ]
-    ```
-    If you wanted to override some rule and you didn't find the description on `tslint` website, that's a second place you should check.
-
-6. Running tslint
+5. Running tslint
 
     `lint` script is defined in the `package.json`:
 
@@ -185,8 +186,18 @@ the standard linter for `TypeScript`. The default linting tool for `Angular`.
     $ tslint ./src/**/*.ts -t verbose
     ```
 
-7. Additional rules I found more interesting:
+6. Aren't the default rules enough?
 
+    It depends on your team workflow. However if you tend to put the same comment over and over again during the code review, it probably can be automated.
+    
+    Additional rules I found more interesting:
+
+
+7. Deprecation
+
+    > __TSLint will be deprecated some time in 2019__. See this issue for more details: [Roadmap: TSLint &rarr; ESLint](https://github.com/palantir/tslint/issues/4534). If you're interested in helping with the TSLint/ESLint migration, please check out our [OSS Fellowship](https://medium.com/palantir/fellowships-for-open-source-developers-3892e6b75ee1) program.
+    >
+    > --[tslint readme](https://github.com/palantir/tslint/blob/master/README.md) as of 15th October 2019.
 
 
 
