@@ -190,11 +190,7 @@ the standard linter for `TypeScript`. The default linting tool for `Angular`.
 
     It depends on your team's workflow. However, if you tend to put the same comment over and over when reviewing the code, you can probably automate it.
     
-    Some tslint rules that I found most interesting: no-implicit-dependencies, ordered-imports, prefer-template, member-access, member-ordering, typedef, strict-boolean-expressions, no-boolean-literal-compare, arrow-return-shorthand, max-file-line-count, restrict-plus-operands, prefer-conditional-expression, template-cyclomatic-complexity, prefer-readonly.
-
-    Example of PR in which you must manually add comments to comply with the above rules:
-
-    Example of PR in which you do not have to add any comments, build fails due to linter, and IDE displays errors to programmers during coding:
+    Some tslint rules that I found interesting in the [angular-tslint-rules](https://github.com/fulls1z3/angular-tslint-rules/blob/master/tslint.json): no-implicit-dependencies, prefer-template, typedef, strict-boolean-expressions, no-boolean-literal-compare, arrow-return-shorthand, max-file-line-count, restrict-plus-operands, prefer-conditional-expression, template-cyclomatic-complexity, prefer-readonly.
 
 7. Deprecation
 
