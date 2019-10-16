@@ -190,11 +190,7 @@ the standard linter for `TypeScript`. The default linting tool for `Angular`.
 
     It depends on your team's workflow. However, if you tend to put the same comment over and over when reviewing the code, you can probably automate it.
     
-    Some tslint rules that I found most interesting: no-implicit-dependencies, ordered-imports, prefer-template, member-access, member-ordering, typedef, strict-boolean-expressions, no-boolean-literal-compare, arrow-return-shorthand, max-file-line-count, restrict-plus-operands, prefer-conditional-expression, template-cyclomatic-complexity, prefer-readonly.
-
-    Example of PR in which you must manually add comments to comply with the above rules:
-
-    Example of PR in which you do not have to add any comments, build fails due to linter, and IDE displays errors to programmers during coding:
+    Some tslint rules that I found interesting in the [angular-tslint-rules](https://github.com/fulls1z3/angular-tslint-rules/blob/master/tslint.json): no-implicit-dependencies, prefer-template, typedef, strict-boolean-expressions, no-boolean-literal-compare, arrow-return-shorthand, max-file-line-count, restrict-plus-operands, prefer-conditional-expression, template-cyclomatic-complexity, prefer-readonly.
 
 7. Deprecation
 
@@ -203,13 +199,10 @@ the standard linter for `TypeScript`. The default linting tool for `Angular`.
     > --[tslint readme](https://github.com/palantir/tslint/blob/master/README.md) as of 15th October 2019.
 
 
-
 ## [SonarSource](https://www.sonarsource.com/)
 
 provides solutions for continuous code quality:
 - on-premise **[SonarQube](https://www.sonarqube.org/)** - it is installed and runs on computers on the premises of the person or organization using the software. Community version available.
-
-
 - **[SonarCloud](https://sonarcloud.io/about)** works in the cloud, free for open-source projects - used in this repository.
 
 <details><summary><b>Show instructions on how to integrate an existing Angular project with Sonar</b></summary>
