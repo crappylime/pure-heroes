@@ -8,8 +8,8 @@
 [![license](https://img.shields.io/github/license/crappylime/pure-heroes.svg)](https://github.com/crappylime/pure-heroes/blob/master/LICENSE)
 
 Automate code review with static code analysis.  
-TSLint & SonarQube configuration and rules for *Tour of Heroes* original Angular tutorial. Overview of ways to speed up the code review process.  
-Checkout this project on [stackblitz](https://stackblitz.com/github/crappylime/pure-heroes).
+TSLint & SonarQube configuration and rules for the *Tour of Heroes* original Angular tutorial. Overview of ways to speed up the code review process.  
+Check out this project on [stackblitz](https://stackblitz.com/github/crappylime/pure-heroes).
 
 ## Table of contents
   - [Motivation](#motivation)
@@ -22,14 +22,14 @@ Checkout this project on [stackblitz](https://stackblitz.com/github/crappylime/p
   - [Credits](#credits)
 
 ## Motivation
-Our team had some time off before the first release for production. I asked myself, is the code good enough? At that time, we had the default tslint configuration and, as you can guess, there is always room for improvement. But it would be nice to get priorities, hints in the IDE and there tslint with sonar proved to be very useful. Their configuration took me some time, that's why I will describe step by step how to do it.
+It is always good to ask yourself about the quality of the code, whether it will be easy to maintain, and maybe management also wants to know about it. When the SonarQube report can help, TSLint can check and enforce the high quality code of your peers.
 
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
 ### Prerequisites
-* [VS Code](https://code.visualstudio.com) (you will get there extensions I recommend) or any other IDE
+* [VS Code](https://code.visualstudio.com) (you will get extensions that I recommend) or other IDE
 * [Node.js v. 10.16.3](https://nodejs.org) or higher
 
 ### Installing
@@ -39,7 +39,7 @@ These instructions will get you a copy of the project up and running on your loc
     $ git clone https://github.com/crappylime/pure-heroes.git
     ```
 
-2. Go into the project root directory
+2. Go to the project root
 
     ```sh
     $ cd pure-heroes 
@@ -63,7 +63,7 @@ These instructions will get you a copy of the project up and running on your loc
 
     ![add project](https://raw.githubusercontent.com/crappylime/pure-heroes/master/docs/images/add-project.png)
 
-7. Click set up manually and fill in the form.
+7. Click set up manually and fill out the form.
 
     ![set up manually](https://raw.githubusercontent.com/crappylime/pure-heroes/master/docs/images/setup-manually.png)
 
@@ -91,7 +91,7 @@ These instructions will get you a copy of the project up and running on your loc
     $ npm run sonar
     ```
 
-12. Checkout the produced SonarQube analysis on [SonarCloud](https://sonarcloud.io).
+12. Check out the produced SonarQube analysis on [SonarCloud](https://sonarcloud.io).
 
 ## [TSLint](https://palantir.github.io/tslint/)
 
@@ -108,11 +108,11 @@ the standard linter for `TypeScript`. The default linting tool for `Angular`.
     
     The default configuration for `Angular` is specified in the project's `tslint.json` file.
 
-    `tslint.json` extends `"tslint:recommended"` with rules recommended for TypeScript projects, you can find them [here](https://github.com/palantir/tslint/blob/master/src/configs/recommended.ts).
+    `tslint.json` extends `"tslint:recommended"` to include rules recommended for TypeScript projects, they can be found [here](https://github.com/palantir/tslint/blob/master/src/configs/recommended.ts).
 
-    All these rules are described [here](https://palantir.github.io/tslint/rules/) with given **schema** and example.
+    All these rules are described [here](https://palantir.github.io/tslint/rules/) along with the given **scheme** and example.
 
-    TS rules are split into 5 categories:
+    The TS rules are divided into 5 categories:
     - TS-specific,
     - Functionality,
     - Maintainability,
@@ -121,19 +121,18 @@ the standard linter for `TypeScript`. The default linting tool for `Angular`.
 
     Each rule can have one of the flags: TS Only, Has Fixer, Requires type info.
 
-    There is [playground](https://palantir.github.io/tslint-playground/) available to test each of them.
+    There is a [playground](https://palantir.github.io/tslint-playground/) available to test each of them.
 
-    `Angular` `tslint.json` file also includes the [Codelyzer](https://github.com/mgechev/codelyzer) with rules specific for `Angular`:
+    The `Angular` `tslint.json` file also contains [Codelyzer](https://github.com/mgechev/codelyzer) rules that are specific to `Angular`:
     ```
       "rulesDirectory": [
         "codelyzer"
     ]
     ```
-    If you wanted to override some rule and you didn't find the description on `tslint` website, that's a second place you should check.
 
 3. [Custom rule sets from the community](https://github.com/palantir/tslint/blob/master/README.md#custom-rules--plugins)
 
-    If you follow the [Angular Style Guide](https://angular.io/guide/styleguide), there are some npm packages available that implement these rules:
+    If you follow the [Angular Style Guide](https://angular.io/guide/styleguide), there are several npm packages that implement these rules:
     - [tslint-angular](https://www.npmjs.com/package/tslint-angular),
     - [angular-tslint-rules](https://www.npmjs.com/package/angular-tslint-rules)
 
@@ -156,7 +155,7 @@ the standard linter for `TypeScript`. The default linting tool for `Angular`.
           }
     ```
 
-    You also can [exclude some files](https://palantir.github.io/tslint/usage/configuration/) in the `tslint.json` with `linterOptions?: { exclude?: string[] }`.
+    You can also [exclude some files](https://palantir.github.io/tslint/usage/configuration/) in the `tslint.json` using `linterOptions?: { exclude?: string[] }`.
 
 5. Running tslint
 
@@ -166,9 +165,9 @@ the standard linter for `TypeScript`. The default linting tool for `Angular`.
     "lint": "ng lint"
     ```
 
-    [ng lint](https://angular.io/cli/lint) has some flags available. Among them `--fix`.
+    [ng lint](https://angular.io/cli/lint) has several flags. Among them `--fix`.
 
-    you can run it with `npm`:
+    You can run it with `npm`:
 
     ```sh
     $ npm run lint
@@ -180,18 +179,22 @@ the standard linter for `TypeScript`. The default linting tool for `Angular`.
     $ ng lint
     ```
 
-    or using `tslint` command:
+    or with [tslint cli](https://palantir.github.io/tslint/usage/cli/), for example:
 
     ```sh
     $ tslint ./src/**/*.ts -t verbose
     ```
+    will lint only `ts` files within `src` directory and display the errors in verbose format.
 
-6. Aren't the default rules enough?
+6. Are default rules not enough?
 
-    It depends on your team workflow. However if you tend to put the same comment over and over again during the code review, it probably can be automated.
+    It depends on your team's workflow. However, if you tend to put the same comment over and over when reviewing the code, you can probably automate it.
     
-    Additional rules I found more interesting:
+    Some tslint rules that I found most interesting: no-implicit-dependencies, ordered-imports, prefer-template, member-access, member-ordering, typedef, strict-boolean-expressions, no-boolean-literal-compare, arrow-return-shorthand, max-file-line-count, restrict-plus-operands, prefer-conditional-expression, template-cyclomatic-complexity, prefer-readonly.
 
+    Example of PR in which you must manually add comments to comply with the above rules:
+
+    Example of PR in which you do not have to add any comments, build fails due to linter, and IDE displays errors to programmers during coding:
 
 7. Deprecation
 
@@ -207,9 +210,9 @@ provides solutions for continuous code quality:
 - on-premise **[SonarQube](https://www.sonarqube.org/)** - it is installed and runs on computers on the premises of the person or organization using the software. Community version available.
 
 
-- **[SonarCloud](https://sonarcloud.io/about)** runs on cloud, free for open-source projects - used for this repo.
+- **[SonarCloud](https://sonarcloud.io/about)** works in the cloud, free for open-source projects - used in this repository.
 
-<details><summary><b>Show instructions for integrating existing Angular project with Sonar</b></summary>
+<details><summary><b>Show instructions on how to integrate an existing Angular project with Sonar</b></summary>
 
 1. Install [sonar-scanner](https://www.npmjs.com/package/sonar-scanner):
 
@@ -255,7 +258,7 @@ provides solutions for continuous code quality:
    * `sonar.projectKey`
    * `sonar.organization`
    * `sonar.projectName`
-   * add `sonar.login` if needed
+   * add `sonar.login` if necessary
 
 6. Extend `reports` types with `lcov` in the `karma.conf.js` file:
 
