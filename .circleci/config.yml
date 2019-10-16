@@ -26,14 +26,15 @@ jobs:
             # fallback to using the latest cache if no exact match is found
             - v1-dependencies-
 
-      - run: yarn install
+      - run: npm install
 
       - save_cache:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
 
-      # run build, tests and SonarQube
-      - run: yarn run build
-      - run: yarn run test-ci
-      - run: yarn run sonar
+      # run build, linter, tests and SonarQube
+      - run: npm run build
+      - run: npm run lint
+      - run: npm run test-ci
+      - run: npm run sonar
